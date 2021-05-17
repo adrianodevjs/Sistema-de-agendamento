@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const appointmentService = require('./services/AppointmentService');
+const AppointmentService = require('./services/AppointmentService');
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: false}));
@@ -21,7 +21,7 @@ app.get('/cadastro', (req, res) => {
 
 app.post('/create', async (req, res) => {
     
-    var status = await appointmentService.Create(
+    var status = await AppointmentService.Create(
         req.body.name, 
         req.body.email,
         req.body.description,
@@ -38,7 +38,7 @@ app.post('/create', async (req, res) => {
 });
 
 app.get('/getcalendar', async (req, res) => {
-    var appointements = await appointmentService.GetAll(false);
+    var appointements = await AppointmentService.GetAll(false);
     res.json(appointements);
 });
 
