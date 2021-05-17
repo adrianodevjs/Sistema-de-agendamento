@@ -37,4 +37,9 @@ app.post('/create', async (req, res) => {
         }
 });
 
+app.get('/getcalendar', async (req, res) => {
+    var appointements = await appointmentService.GetAll(false);
+    res.json(appointements);
+});
+
 app.listen(8080, () => {});
