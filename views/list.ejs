@@ -1,0 +1,13 @@
+<h3>Consultas: </h3>
+<hr>
+<form action="" method="POST">
+    <input type="search" id="search" placeholder="Digite o CPF">
+    <button>Pesquisar</button>
+</form>
+<% appos.forEach(appo => { %>
+    <h3>Consulta: <%= appo.description %></h3>
+    <h3>Paciente: <%= appo.name %></h3>
+    <h4>Email: <%= appo.email %></h4>
+    <h4>CPF: <%= appo.cpf %></h4>
+    <hr>
+<% }) %>
