@@ -1,7 +1,7 @@
 <h3>Consultas: </h3>
 <hr>
-<form action="" method="POST">
-    <input type="search" id="search" placeholder="Digite o CPF">
+<form action="/searchresult" method="get">
+    <input type="search" name="search" id="search" placeholder="Digite o CPF">
     <button>Pesquisar</button>
 </form>
 <% appos.forEach(appo => { %>

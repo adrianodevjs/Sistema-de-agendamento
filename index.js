@@ -61,4 +61,10 @@ app.get('/list', async (req, res) => {
     
 });
 
+app.get('/searchresult', async (req, res) => {
+    var appos = await AppointmentService.Search(req.query.search);
+    res.render('list', {appos});
+    console.log(req.query.search);
+});
+
 app.listen(8080, () => {});
