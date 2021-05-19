@@ -97,7 +97,7 @@ class appointementService{
                         from: 'Gunter <ggunter.dev@gmail.com>',
                         to: app.email,
                         subject: 'Não esqueça sua consulta!',
-                        text: 'Sua consulta vai acontecer daqui em 1hr.'
+                        text: 'Sua consulta vai acontecer daqui à 1hr.'
                     }).then(res => {
                         console.log(res);
                     }).catch(err => {
