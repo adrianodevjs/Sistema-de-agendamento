@@ -67,4 +67,10 @@ app.get('/searchresult', async (req, res) => {
     console.log(req.query.search);
 });
 
+// Fazendo consulta no banco e enviando msg
+var pollTime = 1000 * 60 * 5;
+setInterval(async () => {
+    await AppointmentService.SendNotification();
+},pollTime);
+
 app.listen(8080, () => {});
